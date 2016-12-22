@@ -14,6 +14,8 @@ namespace ExcuseManager
     public partial class MainForm : Form
     {
         string currentFolder = Directory.GetCurrentDirectory() + @"\Excuses";
+        Excuse CurrentExcuse;
+
         public MainForm()
         {
             InitializeComponent();
@@ -22,6 +24,7 @@ namespace ExcuseManager
                 control.Enabled = false;
             }
             buttonChooseFolder.Enabled = true;
+            CurrentExcuse = new Excuse();
 
         }
 
@@ -38,6 +41,20 @@ namespace ExcuseManager
                     currentFolder = folderBrowserDialog1.SelectedPath;
                 }
             }
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.Title = "Save an excuse";
+            saveFileDialog1.Filter = "Excuse files | *.excuse ";
+            saveFileDialog1.DefaultExt = "excuse";
+            saveFileDialog1.InitialDirectory = currentFolder;
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                CurrentExcuse.Save(saveFileDialog1.FileName, DateTime.Now);
+            }
+
         }
     }
 }
