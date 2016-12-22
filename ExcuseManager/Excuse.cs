@@ -13,13 +13,14 @@ namespace ExcuseManager
         public string Results;
         public DateTime LastUsed;
 
-        public void Save (string path, DateTime date)
+        public string Save (string path, DateTime date)
         {
             using (StreamWriter sw = new StreamWriter(path))
             {
                 sw.WriteLine(Description);
                 sw.WriteLine(Results);
                 sw.WriteLine(date);
+                return Convert.ToString(File.GetLastAccessTime(path));
             }
         }
     }

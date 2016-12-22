@@ -47,73 +47,85 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(9, 8);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 25);
+            this.label1.Size = new System.Drawing.Size(53, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Excuse";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(103, 13);
+            this.textBox1.Location = new System.Drawing.Point(69, 8);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(782, 31);
+            this.textBox1.Size = new System.Drawing.Size(523, 22);
             this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 54);
+            this.label2.Location = new System.Drawing.Point(9, 35);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 25);
+            this.label2.Size = new System.Drawing.Size(55, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Results";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(103, 51);
+            this.textBox2.Location = new System.Drawing.Point(69, 33);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(782, 31);
+            this.textBox2.Size = new System.Drawing.Size(523, 22);
             this.textBox2.TabIndex = 3;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 99);
+            this.label3.Location = new System.Drawing.Point(9, 63);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 25);
+            this.label3.Size = new System.Drawing.Size(70, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "Last used";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(126, 99);
+            this.dateTimePicker1.Location = new System.Drawing.Point(84, 63);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(759, 31);
+            this.dateTimePicker1.Size = new System.Drawing.Size(507, 22);
             this.dateTimePicker1.TabIndex = 5;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 141);
+            this.label4.Location = new System.Drawing.Point(9, 90);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 25);
+            this.label4.Size = new System.Drawing.Size(62, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "File date";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(126, 141);
+            this.textBox3.Location = new System.Drawing.Point(84, 90);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(759, 31);
+            this.textBox3.Size = new System.Drawing.Size(507, 22);
             this.textBox3.TabIndex = 7;
             // 
             // buttonChooseFolder
             // 
-            this.buttonChooseFolder.Location = new System.Drawing.Point(430, 193);
+            this.buttonChooseFolder.Location = new System.Drawing.Point(287, 124);
+            this.buttonChooseFolder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonChooseFolder.Name = "buttonChooseFolder";
-            this.buttonChooseFolder.Size = new System.Drawing.Size(101, 37);
+            this.buttonChooseFolder.Size = new System.Drawing.Size(67, 24);
             this.buttonChooseFolder.TabIndex = 8;
             this.buttonChooseFolder.Text = "Folder";
             this.buttonChooseFolder.UseVisualStyleBackColor = true;
@@ -121,9 +133,10 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(547, 193);
+            this.buttonSave.Location = new System.Drawing.Point(365, 124);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(106, 37);
+            this.buttonSave.Size = new System.Drawing.Size(71, 24);
             this.buttonSave.TabIndex = 9;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -131,27 +144,29 @@
             // 
             // buttonOpen
             // 
-            this.buttonOpen.Location = new System.Drawing.Point(673, 193);
+            this.buttonOpen.Location = new System.Drawing.Point(449, 124);
+            this.buttonOpen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonOpen.Name = "buttonOpen";
-            this.buttonOpen.Size = new System.Drawing.Size(95, 37);
+            this.buttonOpen.Size = new System.Drawing.Size(63, 24);
             this.buttonOpen.TabIndex = 10;
             this.buttonOpen.Text = "Open";
             this.buttonOpen.UseVisualStyleBackColor = true;
             // 
             // buttonRandom
             // 
-            this.buttonRandom.Location = new System.Drawing.Point(787, 193);
+            this.buttonRandom.Location = new System.Drawing.Point(525, 124);
+            this.buttonRandom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonRandom.Name = "buttonRandom";
-            this.buttonRandom.Size = new System.Drawing.Size(100, 37);
+            this.buttonRandom.Size = new System.Drawing.Size(67, 24);
             this.buttonRandom.TabIndex = 11;
             this.buttonRandom.Text = "Random";
             this.buttonRandom.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(908, 253);
+            this.ClientSize = new System.Drawing.Size(605, 162);
             this.Controls.Add(this.buttonRandom);
             this.Controls.Add(this.buttonOpen);
             this.Controls.Add(this.buttonSave);
@@ -164,6 +179,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
             this.Text = "Excuse Manager";
             this.ResumeLayout(false);

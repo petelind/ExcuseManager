@@ -15,6 +15,7 @@ namespace ExcuseManager
     {
         string currentFolder = Directory.GetCurrentDirectory() + @"\Excuses";
         Excuse CurrentExcuse;
+        bool isChanged = false;
 
         public MainForm()
         {
@@ -25,6 +26,7 @@ namespace ExcuseManager
             }
             buttonChooseFolder.Enabled = true;
             CurrentExcuse = new Excuse();
+            CurrentExcuse.LastUsed = dateTimePicker1.Value;
 
         }
 
@@ -52,9 +54,33 @@ namespace ExcuseManager
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                CurrentExcuse.Save(saveFileDialog1.FileName, DateTime.Now);
+                textBox3.Text = CurrentExcuse.Save(saveFileDialog1.FileName, DateTime.Now);
+                isChanged = false;
+                this.Text = "Excuse Manager";
+                MessageBox.Show("Excuse Successfully Saved!");
             }
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            isChanged = true;
+            this.Text = "Excuse Manager - Unsaved Changes";
+            CurrentExcuse.Description = textBox1.Text;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            isChanged = true;
+            this.Text = "Excuse Manager - Unsaved Changes";
+            CurrentExcuse.Results = textBox2.Text;
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            isChanged = true;
+            this.Text = "Excuse Manager - Unsaved Changes";
+            CurrentExcuse.LastUsed = dateTimePicker1.Value;
         }
     }
 }
