@@ -47,6 +47,12 @@ namespace ExcuseManager
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            if (!isChanged)
+            {
+                MessageBox.Show("Nothing to save, enter or edit data!");
+                return;
+            }
+
             saveFileDialog1.Title = "Save an excuse";
             saveFileDialog1.Filter = "Excuse files | *.excuse ";
             saveFileDialog1.DefaultExt = "excuse";
@@ -81,6 +87,31 @@ namespace ExcuseManager
             isChanged = true;
             this.Text = "Excuse Manager - Unsaved Changes";
             CurrentExcuse.LastUsed = dateTimePicker1.Value;
+        }
+
+        private void buttonOpen_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Title = "Choose excuse file to load...";
+            openFileDialog1.Filter = "Excuse files | *.excuse ";
+            openFileDialog1.InitialDirectory = currentFolder;
+            openFileDialog1.CheckFileExists = true;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamReader sr = new StreamReader(openFileDialog1.FileName))
+                {
+                    CurrentExcuse.Description = sr.ReadLine();
+                    CurrentExcuse.Results = sr.ReadLine();
+                    CurrentExcuse.LastUsed = Convert.ToDateTime(sr.ReadLine());
+
+                    textBox1.Text = CurrentExcuse.Description;
+                    textBox2.Text = CurrentExcuse.Results;
+                    dateTimePicker1.Value = CurrentExcuse.LastUsed;
+                    textBox3.Text = Convert.ToString(File.GetLastAccessTime(openFileDialog1.FileName));
+
+                }
+            }
+
         }
     }
 }
