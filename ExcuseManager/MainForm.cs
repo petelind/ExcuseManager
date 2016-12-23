@@ -60,7 +60,7 @@ namespace ExcuseManager
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                
+                CurrentExcuse.Save(saveFileDialog1.FileName, DateTime.Now);
                 isChanged = false;
                 UpdateForm();
                 MessageBox.Show("Excuse Successfully Saved!");
