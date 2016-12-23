@@ -41,12 +41,14 @@
             this.buttonOpen = new System.Windows.Forms.Button();
             this.buttonRandom = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(14, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 25);
             this.label1.TabIndex = 0;
@@ -54,15 +56,16 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(103, 13);
+            this.textBox1.Location = new System.Drawing.Point(104, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(782, 31);
             this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 54);
+            this.label2.Location = new System.Drawing.Point(14, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 25);
             this.label2.TabIndex = 2;
@@ -70,15 +73,16 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(103, 51);
+            this.textBox2.Location = new System.Drawing.Point(104, 52);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(782, 31);
             this.textBox2.TabIndex = 3;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 99);
+            this.label3.Location = new System.Drawing.Point(14, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 25);
             this.label3.TabIndex = 4;
@@ -86,15 +90,16 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(126, 99);
+            this.dateTimePicker1.Location = new System.Drawing.Point(126, 98);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(759, 31);
+            this.dateTimePicker1.Size = new System.Drawing.Size(758, 31);
             this.dateTimePicker1.TabIndex = 5;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 141);
+            this.label4.Location = new System.Drawing.Point(14, 141);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 25);
             this.label4.TabIndex = 6;
@@ -105,14 +110,14 @@
             this.textBox3.Location = new System.Drawing.Point(126, 141);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(759, 31);
+            this.textBox3.Size = new System.Drawing.Size(758, 31);
             this.textBox3.TabIndex = 7;
             // 
             // buttonChooseFolder
             // 
-            this.buttonChooseFolder.Location = new System.Drawing.Point(430, 193);
+            this.buttonChooseFolder.Location = new System.Drawing.Point(430, 194);
             this.buttonChooseFolder.Name = "buttonChooseFolder";
-            this.buttonChooseFolder.Size = new System.Drawing.Size(101, 37);
+            this.buttonChooseFolder.Size = new System.Drawing.Size(100, 38);
             this.buttonChooseFolder.TabIndex = 8;
             this.buttonChooseFolder.Text = "Folder";
             this.buttonChooseFolder.UseVisualStyleBackColor = true;
@@ -120,30 +125,37 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(547, 193);
+            this.buttonSave.Location = new System.Drawing.Point(548, 194);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(106, 37);
+            this.buttonSave.Size = new System.Drawing.Size(106, 38);
             this.buttonSave.TabIndex = 9;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonOpen
             // 
-            this.buttonOpen.Location = new System.Drawing.Point(673, 193);
+            this.buttonOpen.Location = new System.Drawing.Point(674, 194);
             this.buttonOpen.Name = "buttonOpen";
-            this.buttonOpen.Size = new System.Drawing.Size(95, 37);
+            this.buttonOpen.Size = new System.Drawing.Size(94, 38);
             this.buttonOpen.TabIndex = 10;
             this.buttonOpen.Text = "Open";
             this.buttonOpen.UseVisualStyleBackColor = true;
+            this.buttonOpen.Click += new System.EventHandler(this.buttonOpen_Click);
             // 
             // buttonRandom
             // 
-            this.buttonRandom.Location = new System.Drawing.Point(787, 193);
+            this.buttonRandom.Location = new System.Drawing.Point(788, 194);
             this.buttonRandom.Name = "buttonRandom";
-            this.buttonRandom.Size = new System.Drawing.Size(100, 37);
+            this.buttonRandom.Size = new System.Drawing.Size(100, 38);
             this.buttonRandom.TabIndex = 11;
             this.buttonRandom.Text = "Random";
             this.buttonRandom.UseVisualStyleBackColor = true;
+            this.buttonRandom.Click += new System.EventHandler(this.buttonRandom_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // MainForm
             // 
@@ -184,6 +196,8 @@
         private System.Windows.Forms.Button buttonOpen;
         private System.Windows.Forms.Button buttonRandom;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
