@@ -25,6 +25,7 @@ namespace ExcuseManager
             }
         }
         public void Load(string path)
+            // added comment
         {
             using (StreamReader sr = new StreamReader(path))
             {
