@@ -8,6 +8,7 @@ using System.IO;
 namespace ExcuseManager
 {
     public class Excuse
+    // TODO: You see there is no comments
     {
         public string Description;
         public string Results;
