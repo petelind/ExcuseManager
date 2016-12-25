@@ -8,6 +8,7 @@ using System.IO;
 namespace ExcuseManager
 {
     public class Excuse
+    // TODO: Comments needed
     {
         public string Description;
         public string Results;
@@ -24,6 +25,7 @@ namespace ExcuseManager
             }
         }
         public void Load(string path)
+            // added comment
         {
             using (StreamReader sr = new StreamReader(path))
             {
