@@ -38,9 +38,9 @@ namespace ExcuseManager
                     this.Results = temp.Results;
                     this.LastUsed = temp.LastUsed;
                 }
-                catch (SerializationException)
+                catch (SerializationException ex)
                 {
-                    System.Windows.Forms.MessageBox.Show("File you have chosen is not a valid EX file, choose another one!", "Invalid File!");                                  
+                    System.Windows.Forms.MessageBox.Show("File you have chosen is not a valid EX file, choose another one! Here is what happened: " + ex.Message, "Invalid File!");                                  
                 }
                            
             }
